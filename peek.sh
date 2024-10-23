@@ -1,7 +1,9 @@
 #!/bin/bash
 
-echo $1
 
-head  -n 3 $1
-echo ...
-tail -n 3 $1
+file=$1
+line=$2
+
+head -n "$line" "$file"
+echo "..."
+tail -n "$line" "$file"
