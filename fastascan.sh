@@ -88,14 +88,14 @@ echo "$fastas" | while read file; do
 	echo ------------------------------------------------------------------------------------------------------------
 	#if the file has 2N lines or fewer, then display its full content; if not, show the first N lines, then "...", then the last N lines. If N is 0, skip this step.
 	echo
-	if [[ N_lines=0 ]]; then
+	if [[ N_lines -eq 0 ]]; then
 
 		continue
 
 	else 
 		echo Displaying content of file:
 
-		if [[ N_lines == $((2 * $(cat "$file" | wc -l) )) ]]; then
+		if [[ N_lines -le $((2 * $(cat "$file" | wc -l) )) ]]; then
 			echo Displaying content of file:
 			cat $file
 	 	else
