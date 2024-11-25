@@ -95,7 +95,7 @@ echo "$fastas" | while read file; do
 	else 
 		echo Displaying content of file:
 
-		if [[ N_lines -le $((2 * $(cat "$file" | wc -l) )) ]]; then
+		if [[ N_lines -ge $((2 * $(cat "$file" | wc -l) )) ]]; then
 			echo Displaying content of file:
 			cat $file
 	 	else
